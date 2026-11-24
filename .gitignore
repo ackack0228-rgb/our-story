@@ -1,0 +1,44 @@
+.worktrees/
+
+# Vite
+dist/
+dist-ssr/
+*.local
+
+# npm dependencies
+node_modules/
+
+# Testing
+coverage/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local server data (SQLite DB + uploaded photos)
+server/data/
+
+# Letter song (copyrighted audio, never committed; uploaded to the private Supabase bucket)
+content/music/
+
+# Plan execution scratch
+.superpowers/

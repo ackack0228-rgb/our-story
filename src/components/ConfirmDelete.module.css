@@ -1,0 +1,6 @@
+.confirm { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed color-mix(in srgb, currentColor 25%, transparent); }
+.ask { flex: 1; min-width: 0; font-size: 0.8125rem; font-weight: 700; }
+.cancel, .yes { flex-shrink: 0; padding: 7px 14px; border-radius: 12px; font-family: inherit; font-size: 0.8125rem; font-weight: 700; }
+.cancel { background: none; color: inherit; border: 1px solid color-mix(in srgb, currentColor 30%, transparent); }
+.yes { background: var(--coral-dark); color: #fff; border: 1px solid var(--coral-dark); }
+.cancel:disabled, .yes:disabled { opacity: 0.6; }

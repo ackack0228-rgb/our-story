@@ -1,0 +1,48 @@
+.top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 2px 10px; }
+.count { font-size: 0.875rem; }
+.zoomBtn { flex-shrink: 0; background: var(--night-soft); color: var(--cream); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-weight: 700; font-size: 0.75rem; }
+.zoomBtn[aria-pressed='true'] { background: var(--coral); color: #241618; border-color: var(--coral); }
+.count b { font-weight: 700; }
+.countNum { color: var(--coral); }
+.mapWrap { background: var(--paper); border-radius: 18px; padding: 8px; }
+.map { display: block; width: 100%; height: auto; touch-action: manipulation; }
+/* Enlarged: the map is twice as wide and the card becomes a window onto it that scrolls both ways. */
+.mapWrap.zoomed { overflow: auto; max-height: 70vh; max-height: 70dvh; -webkit-overflow-scrolling: touch; }
+.mapWrap.zoomed .map { width: 220%; touch-action: pan-x pan-y; }
+/* The names are part of the picture: a press goes through them to the area underneath. */
+.name { fill: var(--ink); font-weight: 700; text-anchor: middle; dominant-baseline: central; pointer-events: none; user-select: none; -webkit-user-select: none; }
+/* Areas we have not been to are a shade of the paper; the ones we have are rose. The stroke is the
+   paper itself, so the borders read as gaps between the pieces. */
+.region { fill: #EBDACD; stroke: var(--paper); stroke-width: 2; stroke-linejoin: round; cursor: pointer; }
+/* Visited areas, deeper the more records they hold (1 / 2–3 / 4+). */
+/* One visit keeps the usual rose; more visits go deeper. */
+.region.once { fill: var(--coral); }
+.region.few { fill: #C9707F; }
+.region.many { fill: #9E4A5B; }
+.name.few, .name.many { fill: #fff; }
+.selectedOutline { fill: none; stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; pointer-events: none; }
+.inset { fill: none; stroke: var(--coral-dark); stroke-width: 2; stroke-dasharray: 7 6; opacity: 0.7; }
+.insetLabel { fill: var(--ink); font-size: 26px; font-weight: 700; opacity: 0.55; }
+.caption { font-size: 0.6875rem; color: var(--cream); opacity: 0.45; text-align: center; margin-top: 8px; }
+.picker { width: 100%; margin-top: 12px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--night-soft); color: var(--cream); }
+.panel { margin-top: 12px; background: var(--night-soft); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+.panelTitle { font-family: var(--serif); font-size: 1.125rem; font-weight: 700; margin-bottom: 10px; }
+.panelEmpty { font-size: 0.8125rem; opacity: 0.6; margin-bottom: 4px; }
+.place { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; background: var(--night-softer); border: none; border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; color: var(--cream); }
+.placeMood { flex-shrink: 0; font-size: 1.125rem; }
+.placeName { flex: 1; min-width: 0; overflow-wrap: anywhere; font-weight: 700; font-size: 0.875rem; }
+.placeDate { flex-shrink: 0; font-size: 0.6875rem; opacity: 0.6; }
+.placeEdit { flex-shrink: 0; font-size: 0.6875rem; font-weight: 700; color: var(--coral); }
+.addBtn { width: 100%; margin-top: 6px; background: var(--coral); color: #241618; border: none; border-radius: 12px; padding: 12px 16px; font-weight: 700; }
+.error { color: var(--coral); font-size: 0.8125rem; text-align: center; margin-top: 10px; }
+/* Laptop: the portrait map at full 960px width would be taller than the screen. */
+@media (min-width: 900px) {
+  .top, .mapWrap, .caption, .picker, .panel { max-width: 520px; margin-left: auto; margin-right: auto; }
+}
+/* What the shades mean, under the map. */
+.shadeKey { display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px; font-size: 0.6875rem; opacity: 0.85; }
+.shadeKey span { display: inline-flex; align-items: center; gap: 5px; }
+.shadeKey i { width: 10px; height: 10px; border-radius: 3px; }
+.shadeKey i.once { background: var(--coral); }
+.shadeKey i.few { background: #C9707F; }
+.shadeKey i.many { background: #9E4A5B; }

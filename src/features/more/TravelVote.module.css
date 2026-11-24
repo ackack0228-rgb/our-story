@@ -1,0 +1,39 @@
+/* The form stays folded until it is needed, so the tickets come first. */
+.openForm { display: block; width: 100%; margin-bottom: 16px; padding: 13px; background: none; border: 1.5px dashed rgba(232, 149, 156, 0.7); border-radius: 12px; color: var(--coral); font-size: 0.875rem; font-weight: 700; }
+.addWrap { display: flex; flex-direction: column; gap: 8px; background: var(--night-soft); border: 1px solid var(--line); border-radius: 18px; padding: 12px; margin-bottom: 16px; }
+.addWrap input { padding: 11px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--night); color: var(--cream); }
+.formActions { display: flex; gap: 8px; }
+.cancelBtn { padding: 12px 16px; background: none; color: var(--cream); border: 1px solid var(--line); border-radius: 12px; font-weight: 700; }
+.addBtn { flex: 1; padding: 12px; background: var(--coral); color: #241618; border: none; border-radius: 12px; font-weight: 700; }
+
+/* A boarding pass. The two half-moon notches where the stub tears off are real holes (mask), so the
+   page shows through whatever its colour is there; the shadow sits on the wrapper because a mask clips its own. */
+.ticketWrap { margin-bottom: 14px; filter: drop-shadow(0 8px 14px rgba(20, 10, 28, 0.35)); }
+.ticket {
+  --stub: 5.75rem;
+  position: relative; display: flex; background: var(--paper); color: var(--ink); border-radius: 10px;
+  -webkit-mask: radial-gradient(circle 9px at calc(100% - var(--stub)) 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle 9px at calc(100% - var(--stub)) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+  mask: radial-gradient(circle 9px at calc(100% - var(--stub)) 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle 9px at calc(100% - var(--stub)) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+}
+.trip { flex: 1; min-width: 0; padding: 14px 14px 14px 18px; display: flex; flex-direction: column; gap: 5px; }
+.route { display: flex; align-items: center; gap: 8px; font-size: 0.6875rem; font-weight: 700; color: var(--coral-dark); }
+.name { font-family: var(--serif); font-size: 1.625rem; font-weight: 700; line-height: 1.15; overflow-wrap: anywhere; }
+.note { font-size: 0.75rem; color: #6B4A52; overflow-wrap: anywhere; }
+.aboard { display: flex; gap: 14px; margin-top: 4px; font-size: 0.6875rem; color: #6B4A52; }
+.notYet { opacity: 0.55; }
+.stub { width: var(--stub); flex-shrink: 0; border-left: 2px dashed rgba(74, 46, 53, 0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 10px 0; }
+.heart { width: 2.75rem; height: 2.75rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 0; background: none; border: 1.5px solid var(--coral-dark); color: var(--coral-dark); }
+.heart.liked { background: var(--coral-dark); color: #fff; }
+.count { font-size: 0.6875rem; font-weight: 700; }
+.del { background: none; border: none; color: var(--ink); opacity: 0.45; font-size: 0.6875rem; padding: 2px 4px; }
+/* Both of us want it: a gold stamp across the pass. */
+.confirmed {
+  align-self: flex-start; margin: 6px 0 0 4px; transform: rotate(-6deg); pointer-events: none;
+  border: 2px solid #A8714A; outline: 1px solid #A8714A; outline-offset: 2px; border-radius: 6px; padding: 2px 9px 3px;
+  font-family: var(--serif); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; color: #A8714A;
+}
+.confirmBox { background: var(--paper); color: var(--ink); border-radius: 10px; padding: 0 14px 12px; margin-top: 4px; }
+.empty { text-align: center; opacity: 0.6; font-size: 0.8125rem; padding: 28px 12px; border: 1px dashed var(--line); border-radius: 18px; }
+.error { color: var(--coral); font-size: 0.8125rem; margin: -6px 0 12px; }

@@ -1,0 +1,74 @@
+/* The form stays folded until it is needed, so the reviews come first. */
+.openForm { display: block; width: 100%; margin-bottom: 16px; padding: 13px; background: none; border: 1.5px dashed rgba(232, 149, 156, 0.7); border-radius: 12px; color: var(--coral); font-size: 0.875rem; font-weight: 700; }
+.form { background: var(--night-soft); border: 1px solid var(--line); border-radius: 18px; padding: 14px; margin-bottom: 18px; }
+.hint { margin-bottom: 4px; padding: 10px 12px; border-radius: 12px; background: var(--night-softer); color: var(--cream); font-size: 0.8125rem; font-weight: 700; }
+.fieldLabel { font-size: 0.75rem; font-weight: 700; opacity: 0.7; margin: 12px 0 6px; color: var(--cream); }
+.form .fieldLabel:first-child { margin-top: 0; }
+.input { display: block; width: 100%; padding: 11px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--night); color: var(--cream); }
+.starRow { display: flex; gap: 6px; }
+/* Same rose as the stars on the reviews, so a rating looks the same before and after it is saved. */
+.star { font-size: 1.875rem; line-height: 1; padding: 0 2px; background: none; border: none; color: var(--coral); opacity: 0.25; }
+.star.filled { opacity: 1; }
+.formActions { display: flex; gap: 8px; margin-top: 14px; }
+.cancelBtn { padding: 12px 16px; background: none; color: var(--cream); border: 1px solid var(--line); border-radius: 12px; font-weight: 700; }
+.addBtn { flex: 1; padding: 12px; background: var(--coral); color: #241618; border: none; border-radius: 12px; font-weight: 700; }
+
+/* Shared by the three keepsakes */
+.shadow { margin: 12px 0; filter: drop-shadow(0 8px 14px rgba(20, 10, 28, 0.35)); }
+.top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.name { font-family: var(--serif); font-weight: 700; font-size: 1.125rem; overflow-wrap: anywhere; }
+.stars { flex-shrink: 0; font-size: 0.875rem; letter-spacing: 0.05em; color: var(--coral-dark); white-space: nowrap; }
+.note { font-size: 0.8125rem; line-height: 1.5; margin-top: 4px; overflow-wrap: anywhere; }
+.date { font-size: 0.6875rem; color: #6B4A52; }
+.del { background: none; border: none; color: var(--ink); opacity: 0.4; font-size: 0.875rem; padding: 2px 4px; }
+
+/* 영화: a cinema ticket. The stub's two notches are punched out with a mask. */
+.ticket {
+  --stub: 3.25rem;
+  display: flex; background: #F4E1E3; color: var(--ink); border-radius: 8px;
+  -webkit-mask: radial-gradient(circle 9px at var(--stub) 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle 9px at var(--stub) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+  mask: radial-gradient(circle 9px at var(--stub) 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle 9px at var(--stub) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+}
+.stub { width: var(--stub); flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-right: 2px dashed rgba(74, 46, 53, 0.25); }
+/* Korean reads upright when stacked, unlike Latin text turned on its side. */
+.stub span { writing-mode: vertical-rl; text-orientation: upright; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.3em; color: var(--coral-dark); }
+.ticketBody { flex: 1; min-width: 0; padding: 14px 16px 10px; }
+.foot { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+
+/* 맛집: a till receipt, torn along the bottom. */
+.receipt {
+  background: #fff; color: var(--ink); padding: 16px 18px 20px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), 96.875% 100%, 93.75% calc(100% - 8px), 90.625% 100%, 87.5% calc(100% - 8px), 84.375% 100%, 81.25% calc(100% - 8px), 78.125% 100%, 75% calc(100% - 8px), 71.875% 100%, 68.75% calc(100% - 8px), 65.625% 100%, 62.5% calc(100% - 8px), 59.375% 100%, 56.25% calc(100% - 8px), 53.125% 100%, 50% calc(100% - 8px), 46.875% 100%, 43.75% calc(100% - 8px), 40.625% 100%, 37.5% calc(100% - 8px), 34.375% 100%, 31.25% calc(100% - 8px), 28.125% 100%, 25% calc(100% - 8px), 21.875% 100%, 18.75% calc(100% - 8px), 15.625% 100%, 12.5% calc(100% - 8px), 9.375% 100%, 6.25% calc(100% - 8px), 3.125% 100%, 0 calc(100% - 8px));
+}
+.receiptName { text-align: center; font-family: var(--serif); font-weight: 700; font-size: 1.125rem; overflow-wrap: anywhere; }
+.receiptMeta { text-align: center; font-size: 0.6875rem; color: #6B4A52; margin-top: 2px; }
+.rule { border-top: 1px dashed rgba(74, 46, 53, 0.3); margin: 10px 0; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 0.8125rem; margin-top: 6px; }
+.row:first-of-type { margin-top: 0; }
+.rowLabel { flex-shrink: 0; }
+.rowValue { text-align: right; overflow-wrap: anywhere; }
+.receiptFoot { display: flex; justify-content: flex-end; margin-top: -4px; }
+
+/* 여행지: a postcard with a stamp and a postmark for the date. */
+.postcard { display: flex; gap: 22px; align-items: flex-start; margin: 12px 0; background: var(--paper); color: var(--ink); border-radius: 6px; padding: 14px 16px 10px; box-shadow: 0 8px 18px rgba(20, 10, 28, 0.35); }
+.stampWrap { position: relative; flex-shrink: 0; }
+.stamp {
+  display: block; width: 64px; height: 64px; padding: 4px; background: #fff;
+  -webkit-mask: radial-gradient(circle, #0000 2.6px, #000 3px) -4px -4px / 8px 8px, linear-gradient(#000 0 0) content-box;
+  mask: radial-gradient(circle, #0000 2.6px, #000 3px) -4px -4px / 8px 8px, linear-gradient(#000 0 0) content-box;
+}
+.stamp svg { display: block; }
+.postmark {
+  position: absolute; right: -16px; bottom: -8px; width: 42px; height: 42px; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.05;
+  border: 1.5px solid var(--coral-dark); color: var(--coral-dark); background: rgba(251, 243, 236, 0.72);
+  transform: rotate(-14deg); font-family: var(--serif); font-size: 0.5625rem; pointer-events: none;
+}
+.postmark b { font-size: 0.75rem; }
+.postBody { flex: 1; min-width: 0; }
+.postFoot { display: flex; justify-content: flex-end; margin-top: 4px; }
+
+.empty { text-align: center; opacity: 0.6; font-size: 0.8125rem; padding: 28px 12px; border: 1px dashed var(--line); border-radius: 18px; }
+.error { color: var(--coral); font-size: 0.8125rem; margin: -8px 0 12px; }

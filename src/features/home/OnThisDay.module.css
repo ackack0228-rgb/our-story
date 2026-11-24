@@ -1,0 +1,15 @@
+.wrap { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+.card {
+  background: linear-gradient(135deg, var(--night-softer), var(--night-soft));
+  border: 1px solid var(--line); border-radius: 18px; padding: 18px;
+}
+.eyebrow { font-size: 0.7188rem; color: var(--coral); font-weight: 700; }
+.name { font-size: 1rem; margin-top: 6px; font-family: var(--display); line-height: 1.4; }
+.photo {
+  display: block; width: 100%; border-radius: 12px; max-height: 220px;
+  object-fit: cover; margin-top: 10px;
+}
+.diary {
+  margin: 8px 0 0; font-size: 0.875rem; opacity: 0.85; line-height: 1.45;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}

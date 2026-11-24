@@ -1,0 +1,23 @@
+.card { background: linear-gradient(135deg, var(--night-softer), var(--night-soft)); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+.choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.slot { position: relative; display: flex; }
+/* VS sits on the gap between the two choices. */
+.vs { position: absolute; left: -5px; top: 50%; transform: translate(-50%, -50%); z-index: 1; width: 1.875rem; height: 1.875rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--night); border: 1px solid var(--line); font-size: 0.5625rem; font-weight: 700; letter-spacing: 0.05em; color: var(--gold); }
+.choice { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-height: 5.5rem; padding: 14px 12px; font-family: inherit; color: var(--cream); background: var(--night); border: 1px solid var(--line); border-radius: 14px; }
+.choice:disabled { opacity: 1; }
+/* Once I have picked, the side nobody is shown on steps back. */
+.choice:disabled:not(.mine):not(.theirs) { opacity: 0.55; }
+.choice.theirs { border-color: var(--cream); }
+.choice.mine { background: color-mix(in srgb, var(--coral) 22%, var(--night)); border-color: var(--coral); }
+.choice.matched { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 24%, var(--night)); }
+.text { font-family: var(--display); font-size: 1rem; font-weight: 700; line-height: 1.35; text-align: center; overflow-wrap: anywhere; word-break: keep-all; }
+.who { font-size: 0.6875rem; font-weight: 700; color: var(--coral); }
+.choice.matched .who { color: var(--gold); }
+.status { margin-top: 12px; font-size: 0.8125rem; font-weight: 700; color: var(--coral); }
+.error { color: var(--coral); font-size: 0.8125rem; margin-top: 8px; }
+.pastToggle { margin-top: 12px; padding: 4px 0; background: none; border: none; color: var(--cream); opacity: 0.6; font-family: inherit; font-size: 0.75rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.past { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 0.8125rem; line-height: 1.45; }
+.pastToggle + .past { margin-top: 6px; }
+.pastDate { flex-shrink: 0; width: 2.75rem; font-size: 0.75rem; font-weight: 700; color: var(--gold); }
+.pastBody { min-width: 0; flex: 1; overflow-wrap: anywhere; opacity: 0.9; }
+.pastMark { flex-shrink: 0; }

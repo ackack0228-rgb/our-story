@@ -1,0 +1,22 @@
+.social { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.reaction { display: inline-flex; align-items: center; gap: 5px; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; font-size: 0.875rem; line-height: 1.2; color: var(--cream); }
+.reaction.reacted { background: var(--night-softer); border-color: var(--coral); }
+.reaction:disabled { opacity: 0.6; }
+.reactors { font-size: 0.6875rem; font-weight: 700; opacity: 0.8; }
+.toggle { margin-left: auto; background: none; border: none; padding: 5px 2px; font-family: inherit; font-size: 0.75rem; font-weight: 700; color: var(--cream); opacity: 0.75; }
+.thread { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.comment { background: var(--night); border: 1px solid var(--line); border-radius: 12px; padding: 8px 10px; }
+.comment.mine { border-color: color-mix(in srgb, var(--coral) 45%, transparent); }
+.meta { display: flex; align-items: center; gap: 8px; font-size: 0.6875rem; }
+.meta b { color: var(--gold); }
+.mine .meta b { color: var(--coral-dark); }
+.meta span { opacity: 0.55; }
+.del { margin-left: auto; background: none; border: none; color: var(--cream); opacity: 0.5; font-size: 0.75rem; padding: 0 2px; }
+.text { margin-top: 3px; font-size: 0.8125rem; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.empty { font-size: 0.75rem; opacity: 0.55; text-align: center; padding: 4px 0; }
+.compose { display: flex; gap: 8px; align-items: flex-end; }
+.compose textarea { flex: 1; min-width: 0; resize: none; min-height: 2.5rem; max-height: 6rem; padding: 9px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--night); color: var(--cream); font-family: inherit; font-size: 1rem; line-height: 1.4; }
+.send { flex-shrink: 0; padding: 10px 14px; border: none; border-radius: 12px; background: var(--coral); color: #241618; font-family: inherit; font-weight: 700; font-size: 0.8125rem; }
+.send:disabled { opacity: 0.5; }
+.error { color: var(--coral); font-size: 0.75rem; margin-top: 6px; }

@@ -1,0 +1,4 @@
+/* A notice that points to the recap: dark like the other home cards — the recap itself is the paper one. */
+.card { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; margin-top: 14px; padding: 14px 18px; text-align: left; font-family: inherit; color: var(--cream); background: var(--night-soft); border: 1px solid var(--line); border-radius: 16px; }
+.what { font-family: var(--display); font-size: 0.9375rem; font-weight: 700; }
+.go { flex-shrink: 0; font-size: 0.75rem; font-weight: 700; color: var(--coral); }

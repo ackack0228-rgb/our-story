@@ -1,0 +1,25 @@
+.wrap { background: var(--mood-bg, var(--night-soft)); border: 1px solid var(--line); border-radius: 18px; padding: 24px 20px 20px; text-align: center; }
+/* The whole card takes the light of the mood; --coral is swapped too, so the slider and the button follow. */
+.dawn { --mood-bg: radial-gradient(circle at 50% 22%, #3D4472 0%, #2E2850 55%, #2A2246 100%); --mood-halo: rgba(142, 160, 220, 0.45); --coral: #9AA8DE; }
+.dusk { --mood-bg: radial-gradient(circle at 50% 22%, #563A66 0%, #3A2750 60%, #33234A 100%); --mood-halo: rgba(214, 160, 200, 0.4); --coral: #D7A3C4; }
+.glow { --mood-bg: radial-gradient(circle at 50% 22%, #7A3F55 0%, #4A2A4E 60%, #3A2447 100%); --mood-halo: rgba(246, 190, 140, 0.55); --coral: #F0A98F; }
+/* The face sits in a soft glow, the number under it in the heading face. */
+.emojiBig { width: 5.5rem; height: 5.5rem; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 3.25rem; line-height: 1; border-radius: 50%; background: radial-gradient(circle, var(--mood-halo, rgba(232, 149, 156, 0.28)), transparent 70%); }
+.valLabel { font-family: var(--serif); font-size: 1.375rem; font-weight: 700; margin-top: 6px; }
+.slider { width: 100%; margin-top: 20px; }
+.ends { display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.9375rem; opacity: 0.7; }
+.saveBtn { width: 100%; margin-top: 16px; background: var(--coral); color: #241618; border: none; border-radius: 12px; padding: 12px; font-weight: 700; }
+.error { color: var(--coral); font-size: 0.8125rem; margin-top: 10px; }
+.saved { font-size: 0.8125rem; margin-top: 10px; opacity: 0.8; }
+.todayVal { font-weight: 700; margin-left: 4px; }
+.chartCard { background: var(--night-soft); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-top: 16px; }
+.chartHead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.chartTitle { font-family: var(--serif); font-size: 1rem; font-weight: 700; }
+.period { font-size: 0.75rem; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.periodNote { margin-top: 8px; font-size: 0.6875rem; opacity: 0.5; text-align: center; }
+.legend { display: flex; gap: 16px; font-size: 0.8125rem; margin-bottom: 8px; }
+.legend span { display: flex; align-items: center; gap: 6px; }
+.dotA, .dotB { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dotA { background: #E8959C; }
+.dotB { background: #D9A87E; }
+.empty { text-align: center; opacity: 0.6; font-size: 0.8125rem; padding: 24px 0; }

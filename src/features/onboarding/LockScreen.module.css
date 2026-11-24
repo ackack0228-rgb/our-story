@@ -1,0 +1,35 @@
+.wrap {
+  width: 100%;
+  max-width: 460px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  background: linear-gradient(180deg, var(--night) 0%, #33203F 55%, var(--dusk) 100%);
+  color: var(--cream);
+  text-align: center;
+}
+.title { font-family: var(--serif); font-size: 1.625rem; font-weight: 700; margin: 0 0 18px; }
+/* The same stamp as the D-day card on the home screen, in miniature. */
+.mark {
+  position: relative; align-self: center; width: 64px; height: 76px; margin-bottom: 14px; background: var(--paper); border-radius: 2px;
+  display: flex; align-items: center; justify-content: center; color: var(--coral-dark); font-size: 1.625rem; transform: rotate(-6deg);
+  box-shadow: 0 8px 18px rgba(20, 10, 28, 0.4);
+}
+.mark::before {
+  content: ''; position: absolute; inset: -4px; pointer-events: none;
+  --hole: radial-gradient(circle, var(--backdrop) 2.9px, transparent 3.4px);
+  background-image: var(--hole), var(--hole), var(--hole), var(--hole);
+  background-size: 10px 8px, 10px 8px, 8px 10px, 8px 10px;
+  background-position: top left, bottom left, top left, top right;
+  background-repeat: round no-repeat, round no-repeat, no-repeat round, no-repeat round;
+}
+.mark::after { content: ''; position: absolute; inset: 7px; border: 1px solid rgba(196, 112, 126, 0.55); pointer-events: none; }
+.label { font-size: 0.8125rem; opacity: 0.75; }
+.input { font-size: 1rem; text-align: center; letter-spacing: 0.2em; border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: var(--night-soft); color: var(--cream); }
+.message { color: var(--coral); font-size: 0.8125rem; }
+.primary { background: var(--coral); color: #241618; border: none; border-radius: 12px; padding: 14px; font-weight: 700; }
+.primary:disabled { opacity: 0.6; }

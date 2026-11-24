@@ -1,0 +1,3 @@
+.row { display: flex; background: var(--night-soft); border: 1px solid var(--line); border-radius: 14px; padding: 4px; margin-bottom: 12px; }
+.row button { flex: 1; min-width: 0; padding: 9px 6px; border: none; border-radius: 10px; background: transparent; color: var(--cream); font-size: 0.8125rem; font-weight: 700; white-space: nowrap; opacity: 0.75; }
+.row button.active { background: var(--cream); color: var(--ink); opacity: 1; }

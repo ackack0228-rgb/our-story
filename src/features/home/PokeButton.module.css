@@ -1,0 +1,7 @@
+.btn {
+  width: 100%; margin-top: 10px; background: var(--coral); color: #241618;
+  border: 1px solid var(--coral-dark); border-radius: 14px; padding: 12px 16px; font-weight: 700; font-size: 0.875rem;
+}
+.btn:disabled { opacity: 0.6; }
+.received { margin-top: 8px; text-align: center; font-size: 0.8125rem; color: var(--cream); }
+.error { margin-top: 8px; text-align: center; font-size: 0.8125rem; color: var(--coral); }

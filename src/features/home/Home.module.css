@@ -1,0 +1,33 @@
+/* A postage stamp: square corners, a perforated edge and a fine printed frame. The perforations are
+   dots in the page colour laid along each edge, half over the paper and half over the page. */
+.stampCard {
+  position: relative; margin: 6px; background: var(--paper); color: var(--ink); border-radius: 3px;
+  padding: 34px 22px 30px; text-align: center; box-shadow: 0 10px 24px rgba(20, 10, 28, 0.35);
+}
+.stampCard::before {
+  content: ''; position: absolute; inset: -6px; pointer-events: none;
+  --hole: radial-gradient(circle, var(--backdrop) 4.4px, transparent 5px);
+  background-image: var(--hole), var(--hole), var(--hole), var(--hole);
+  background-size: 15px 12px, 15px 12px, 12px 15px, 12px 15px;
+  background-position: top left, bottom left, top left, top right;
+  background-repeat: round no-repeat, round no-repeat, no-repeat round, no-repeat round;
+}
+.stampCard::after {
+  content: ''; position: absolute; inset: 11px; pointer-events: none;
+  border: 1px solid rgba(196, 112, 126, 0.55); border-radius: 2px;
+}
+.label { font-size: 0.6875rem; color: var(--coral-dark); font-weight: 700; letter-spacing: 0.18em; }
+.ddayNum { font-size: 3.625rem; font-weight: 700; line-height: 1.1; margin: 6px 0 2px; font-family: var(--display); }
+.sub { font-size: 0.8125rem; opacity: 0.75; }
+.milestone {
+  margin-top: 14px; font-size: 0.7813rem; background: var(--paper-dark);
+  display: inline-block; padding: 6px 14px; border-radius: 20px; font-weight: 600;
+}
+.sectionTitle { margin: 28px 2px 12px; font-family: var(--display); font-size: 1.0625rem; font-weight: 700; }
+.questionCard {
+  display: block; width: 100%; text-align: left; color: inherit; font-family: inherit;
+  background: linear-gradient(135deg, var(--night-softer), var(--night-soft));
+  border: 1px solid var(--line); border-radius: 18px; padding: 18px;
+}
+.qText { font-size: 1.0625rem; font-family: var(--display); line-height: 1.5; }
+.qStatus { font-size: 0.8125rem; margin-top: 12px; color: var(--coral); font-weight: 700; }

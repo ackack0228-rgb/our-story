@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,500&family=Gowun+Batang:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* "Sunset rose" palette (2026-09-28). Token names are kept from the original navy/coral theme
+   so components didn't need renaming: --night = deep plum, --coral = rose, --gold = rose gold. */
+:root {
+  --night: #2B1E3F;
+  --night-soft: #3A2750;
+  --night-softer: #4E3363;
+  --dusk: #5A2F4E;
+  --paper: #FBF3EC;
+  --paper-dark: #F0DCCD;
+  --coral: #E8959C;
+  --coral-dark: #C4707E;
+  --gold: #D9A87E;
+  --ink: #4A2E35;
+  --cream: #FBF1EA;
+  --line: rgba(251, 241, 234, 0.14);
+  --app-max-width: 460px;
+  /* Korean headings and sentences: one serif for letters and digits alike (Fraunces digits next to Hangul looked pasted in). */
+  --serif: 'Gowun Batang', serif;
+  /* Only where a number stands alone as the picture — the D-day stamp. */
+  --display: 'Fraunces', 'Gowun Batang', serif;
+  /* The page colour right behind the cards near the top, for cut-outs that must match it. */
+  --backdrop: #2D1F40;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: radial-gradient(circle at 20% 0%, var(--night-soft) 0%, var(--night) 55%);
+  color: var(--cream);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  /* Korean wraps between words, not inside them — no lone '요' on the next line. */
+  word-break: keep-all;
+}
+h1, h2, h3, .serif { font-family: var(--serif); }
+/* body is a flex row; #root is its only child and must span it, or .app (width: 100%) shrinks
+   to its content and the column width jumps between tabs. */
+#root { width: 100%; display: flex; justify-content: center; }
+/* Browser-default control text is a fixed 13.33px; tie it to rem so it scales on laptop too. */
+button, input, textarea, select { font-size: 0.8125rem; font-family: inherit; }
+/* Sliders, date pickers and checkmarks in the app's rose instead of the browser's blue. */
+:root { accent-color: var(--coral); }
+/* iPhone Safari draws date/time fields at their own width (wider than the box) and height (taller
+   than text fields). Without the native look they follow width: 100% and padding like the rest;
+   min-height keeps an empty one from collapsing. */
+input[type='date'], input[type='time'] { -webkit-appearance: none; appearance: none; display: block; min-width: 0; min-height: 2.75em; line-height: 1.25; text-align: left; }
+input[type='date']::-webkit-date-and-time-value, input[type='time']::-webkit-date-and-time-value { text-align: left; margin: 0; }
+input[type='range'] { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 999px; background: var(--night-softer); outline-offset: 6px; }
+input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--coral); border: 3px solid var(--cream); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35); }
+input[type='range']::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--coral); border: 3px solid var(--cream); }
+::placeholder { color: inherit; opacity: 0.45; }
+button { cursor: pointer; touch-action: manipulation; transition: transform 0.08s ease, opacity 0.15s ease; }
+button:active:not(:disabled) { transform: scale(0.97); }
+button:disabled { cursor: default; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  button { transition: none; }
+  button:active:not(:disabled) { transform: none; }
+}
+.app {
+  width: 100%;
+  max-width: var(--app-max-width);
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* Plum at the top deepening into a dusky wine glow — dark enough for cream text throughout. */
+  background: linear-gradient(180deg, var(--night) 0%, #33203F 55%, var(--dusk) 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
+  overflow-x: hidden;
+}
+.screen { flex: 1; padding: 4px 20px 100px; }
+
+/* ---- Responsive ----
+   Phone (<600px): edge-to-edge, fits the viewport exactly (dvh tracks the mobile address bar).
+   Laptop (>=900px): wider column and everything scaled up via the root font size (all font sizes
+   are rem). Between the two, the original centered 460px column. */
+@media (max-width: 599px) {
+  .app { box-shadow: none; }
+  /* iOS Safari zooms the page when focusing an input under 16px — keep inputs at 16px so the
+     layout stays fitted to the screen. */
+  input, textarea, select { font-size: 16px; }
+}
+@media (min-width: 900px) {
+  :root { --app-max-width: 960px; }
+  html { font-size: 20px; }
+  .screen { padding: 8px 40px 120px; }
+}

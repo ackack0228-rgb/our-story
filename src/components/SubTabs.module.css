@@ -1,0 +1,7 @@
+.subtabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 8px 0 14px; padding-bottom: 2px; }
+.subtabs::-webkit-scrollbar { display: none; }
+.subtabs button { white-space: nowrap; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--night-soft); color: var(--cream); font-size: 0.8125rem; font-weight: 700; flex-shrink: 0; }
+.subtabs button.active { background: var(--coral); color: #241618; border-color: var(--coral); }
+/* 더보기: all six in sight, three to a row. */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; }
+.grid button { min-width: 0; padding: 9px 4px; text-align: center; overflow: hidden; text-overflow: ellipsis; }

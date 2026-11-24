@@ -1,0 +1,6 @@
+.card { margin-top: 14px; background: var(--night-soft); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; }
+.eyebrow { font-size: 0.8125rem; font-weight: 700; margin-bottom: 8px; }
+.row { display: flex; gap: 10px; align-items: baseline; padding: 5px 0; font-size: 0.8438rem; }
+.when { flex-shrink: 0; color: var(--gold); font-weight: 700; font-size: 0.75rem; min-width: 6.5rem; }
+.what { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.reacted { flex-shrink: 0; margin-left: auto; font-size: 0.75rem; letter-spacing: 1px; }
